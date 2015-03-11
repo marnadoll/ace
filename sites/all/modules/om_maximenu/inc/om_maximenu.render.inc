@@ -523,12 +523,12 @@ function template_preprocess_om_maximenu_submenu_links(&$vars) {
   else {
     // title with javascript should have div tag
     $script_link = om_string_name($content['link_title'], FALSE);
-      
-    // title contains some block elements 
-    $link_tag = ((isset($content['php_option']) && ($content['php_option'] == 1)) || ($script_link == 'Script Link')) ? 'div': 'span';
+
+    // title contains some block elements
+    $link_tag = ((isset($content['php_option']) && ($content['php_option'] == 1)) || ($script_link == 'Script Link')) ? 'div': 'a';
 
     // useful when you just want a button for getting the content to show and not actually linking to anything
-    $vars['om_link'] = '<' . $link_tag . $span_id . ' class="' . $attributes['class'] . '" ' . $span_title . '>' . $link_option . '</' . $link_tag . '>';
+    $vars['om_link'] = '<' . $link_tag. ' href="javascript:void(0)"' . $span_id . ' class="' . $attributes['class'] . '" ' . $span_title . '>' . $link_option . '</' . $link_tag . '>';
   }
   $maximenu_name = preg_replace('/-/', '_', $vars['maximenu_name']);              
   $vars['theme_hook_suggestions'][] = 'om_maximenu_submenu_links__' . $maximenu_name;
