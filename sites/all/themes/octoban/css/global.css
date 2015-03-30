@@ -3955,3 +3955,11 @@ ul.secondary a.active,
 ul.secondary a.active:hover,
 ul.secondary a.active:focus {
 }
+
+/*Views Photo Grid*/
+
+th, td {
+     border: none;
+    padding: 0.75em;
+    vertical-align: top;
+}
